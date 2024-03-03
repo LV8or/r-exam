@@ -1,0 +1,682 @@
+=================================================================================================================================================
+
+A cybersecurity company is publishing critical log data to a log group in Amazon CloudWatch Logs, which was created 3 months ago. The company must encrypt the log data using an AWS KMS customer master key (CMK), so any future data can be encrypted to meet the company’s security guidelines.
+How can the company address this use-case?
+
+Use the AWS CLI <code>describe-log-groups</code> command and specify the KMS key ARN
+Use the AWS CLI <code>create-log-group</code> command and specify the KMS key ARN
+Enable the encrypt feature on the log group via the CloudWatch Logs console
+-Use the AWS CLI <code>associate-kms-key</code> command and specify the KMS key ARN
+
+=================================================================================================================================================
+
+Your company is in the process of building a DevOps culture and is moving all of its on-premise resources to the cloud using serverless architectures and automated deployments. You have created a CloudFormation template in YAML that uses an AWS Lambda function to pull HTML files from GitHub and place them into an Amazon Simple Storage Service (S3) bucket that you specify.
+Which of the following AWS CLI commands can you use to upload AWS Lambda functions and AWS CloudFormation templates to AWS?
+
+-<code>cloudformation package</code> and <code>cloudformation deploy</code>
+<code>cloudformation zip</code> and <code>cloudformation upload</code>
+<code>cloudformation package</code> and <code>cloudformation upload</code>
+<code>cloudformation zip</code> and <code>cloudformation deploy</code>
+
+=================================================================================================================================================
+
+You have a popular web application that accesses data stored in an Amazon Simple Storage Service (S3) bucket. Developers use the SDK to maintain the application and add new features. Security compliance requests that all new objects uploaded to S3 be encrypted using SSE-S3 at the time of upload. Which of the following headers must the developers add to their request?
+
+-'x-amz-server-side-encryption': 'AES256'
+'x-amz-server-side-encryption': 'aws:kms'
+'x-amz-server-side-encryption': 'SSE-S3'
+'x-amz-server-side-encryption': 'SSE-KMS'
+
+=================================================================================================================================================
+
+You are storing your video files in a separate S3 bucket than your main static website in an S3 bucket. When accessing the video URLs directly the users can view the videos on the browser, but they can't play the videos while visiting the main website.
+What is the root cause of this problem?
+
+Disable Server-Side Encryption
+-Enable CORS
+Amend the IAM policy
+Change the bucket policy
+
+=================================================================================================================================================
+*
+A developer is configuring an Application Load Balancer (ALB) to direct traffic to the application's EC2 instances and Lambda functions.
+Which of the following characteristics of the ALB can be identified as correct? (Select two)
+
+-You can not specify publicly routable IP addresses to an ALB
+If you specify targets using an instance ID, traffic is routed to instances using any private IP address from one or more network interfaces
+An ALB has three possible target types: Hostname, IP and Lambda
+If you specify targets using IP addresses, traffic is routed to instances using the primary private IP address
+-An ALB has three possible target types: Instance, IP and Lambda
+
+=================================================================================================================================================
+
+Your mobile application needs to perform API calls to DynamoDB. You do not want to store AWS secret and access keys onto the mobile devices and need all the calls to DynamoDB made with a different identity per mobile device.
+Which of the following services allows you to achieve this?
+
+Cognito Sync
+IAM
+Cognito User Pools
+-Cognito Identity Pools
+
+=================================================================================================================================================
+
+A development team is storing sensitive customer data in S3 that will require encryption at rest. The encryption keys must be rotated at least annually.
+What is the easiest way to implement a solution for this requirement?
+
+Import a custom key into AWS KMS and automate the key rotation on an annual basis by using a Lambda function
+Encrypt the data before sending it to Amazon S3
+Use SSE-C with automatic key rotation on an annual basis
+-Use AWS KMS with automatic key rotation
+
+=================================================================================================================================================
+
+You are a manager for a tech company that has just hired a team of developers to work on the company's AWS infrastructure. All the developers are reporting to you that when using the AWS CLI to execute commands it fails with the following exception: You are not authorized to perform this operation. Encoded authorization failure message: 6h34GtpmGjJJUm946eDVBfzWQJk6z5GePbbGDs9Z2T8xZj9EZtEduSnTbmrR7pMqpJrVYJCew2m8YBZQf4HRWEtrpncANrZMsnzk.
+Which of the following actions will help developers decode the message?
+
+-AWS STS decode-authorization-message
+Use KMS decode-authorization-message
+AWS Cognito Decoder
+AWS IAM decode-authorization-message
+
+=================================================================================================================================================
+
+After reviewing your monthly AWS bill you notice that the cost of using Amazon SQS has gone up substantially after creating new queues; however, you know that your queue clients do not have a lot of traffic and are receiving empty responses.
+Which of the following actions should you take?
+
+Use a FIFO queue
+-Use LongPolling
+Decrease DelaySeconds
+Increase the VisibilityTimeout
+
+=================================================================================================================================================
+
+An IT company uses a blue/green deployment policy to provision new Amazon EC2 instances in an Auto Scaling group behind a new Application Load Balancer for each new application version. The current set up requires the users to log in after every new deployment.
+As a Developer Associate, what advice would you give to the company for resolving this issue?
+
+Use rolling updates instead of a blue/green deployment
+-Use ElastiCache to maintain user sessions
+Use multicast to replicate session information
+Enable sticky sessions in the Application Load Balancer
+
+=================================================================================================================================================
+
+An IT company has a web application running on Amazon EC2 instances that needs read-only access to an Amazon DynamoDB table.
+As a Developer Associate, what is the best-practice solution you would recommend to accomplish this task?
+
+Run application code with AWS account root user credentials to ensure full access to all AWS services
+Create a new IAM user with access keys. Attach an inline policy to the IAM user with read-only access to DynamoDB. Place the keys in the code. For security, redeploy the code whenever the keys rotate
+-Create an IAM role with an AmazonDynamoDBReadOnlyAccess policy and apply it to the EC2 instance profile
+Create an IAM user with Administrator access and configure AWS credentials for this user on the given EC2 instance
+
+=================================================================================================================================================
+
+An order management system uses a cron job to poll for any new orders. Every time a new order is created, the cron job sends this order data as a message to the message queues to facilitate downstream order processing in a reliable way. To reduce costs and improve performance, the company wants to move this functionality to AWS cloud.
+Which of the following is the most optimal solution to meet this requirement?
+
+Use Amazon Simple Notification Service (SNS) to push notifications and use AWS Lambda functions to process the information received from SNS
+Configure different Amazon Simple Queue Service (SQS) queues to poll for new orders
+-Use Amazon Simple Notification Service (SNS) to push notifications when an order is created. Configure different Amazon Simple Queue Service (SQS) queues to receive these messages for downstream processing
+Use Amazon Simple Notification Service (SNS) to push notifications to Kinesis Data Firehose delivery streams for processing the data for downstream applications
+
+=================================================================================================================================================
+
+A developer wants a seamless ability to return to older versions of a Lambda function that is being deployed.
+Which of the following solutions offers the LEAST operational overhead?
+
+Use a Route 53 weighted policy that can point to the different Lambda function versions
+-Use a Lambda function alias that can point to the different versions
+Use Lambda function layers that can point to the different versions
+Use CodeDeploy to configure blue/green deployments for the different Lambda function versions
+
+=================================================================================================================================================
+
+A voting system hosted on-premise was recently migrated to AWS to lower cost, gain scalability, and to better serve thousands of concurrent users. When one of the AWS resource state changes, it generates an event and will need to trigger AWS Lambda. The AWS resource whose state changes and AWS Lambda does not have direct integration.
+Which of the following methods can be used to trigger AWS Lambda?
+
+AWS Lambda Custom Sources
+Open a support ticket with AWS
+Cron jobs to trigger AWS Lambda to check the state of your service
+-CloudWatch Events Rules with AWS Lambda
+
+=================================================================================================================================================
+
+A developer has pushed a Lambda function that pushes data into an RDS MySQL database with the following Python code:
+<pre><code>def handler(event, context):
+    mysql = mysqlclient.connect()
+    data = event['data']
+    mysql.execute(f"INSERT INTO foo (bar) VALUES (${data});")
+    mysql.close()
+    return
+</code></pre>
+On the first execution, the Lambda function takes 2 seconds to execute. On the second execution and all the subsequent ones, the Lambda function takes 1.9 seconds to execute.
+What can be done to improve the execution time of the Lambda function?
+
+-Move the database connection out of the handler
+Change the runtime to Node.js
+Upgrade the MySQL instance type
+Increase the Lambda function RAM
+
+=================================================================================================================================================
+*
+A development team is considering Amazon ElastiCache for Redis as its in-memory caching solution for its relational database.
+Which of the following options are correct while configuring ElastiCache? (Select two)
+
+While using Redis with cluster mode enabled, asynchronous replication mechanisms are used to keep the read replicas synchronized with the primary. If cluster mode is disabled, the replication mechanism is done synchronously
+If you have no replicas and a node fails, you experience no loss of data when using Redis with cluster mode enabled
+You can scale write capacity for Redis by adding replica nodes
+-While using Redis with cluster mode enabled, you cannot manually promote any of the replica nodes to primary
+-All the nodes in a Redis cluster must reside in the same region
+
+=================================================================================================================================================
+
+You have moved your on-premise infrastructure to AWS and are in the process of configuring an AWS Elastic Beanstalk deployment environment for production, development, and testing. You have configured your production environment to use a rolling deployment to prevent your application from becoming unavailable to users. For the development and testing environment, you would like to deploy quickly and are not concerned about downtime.\
+Which of the following deployment policies meet your needs?
+
+-All at once
+Rolling
+Immutable
+Rolling with additional batches
+
+=================================================================================================================================================
+
+You work as a developer doing contract work for the government on AWS gov cloud. Your applications use Amazon Simple Queue Service (SQS) for its message queue service. Due to recent hacking attempts, security measures have become stricter and require you to store data in encrypted queues.
+Which of the following steps can you take to meet your requirements without making changes to the existing code?
+
+Use Client side encryption
+Use the SSL endpoint
+-Enable SQS KMS encryption
+Use Secrets Manager
+
+=================================================================================================================================================
+
+A financial services company with over 10,000 employees has hired you as the new Senior Developer. Initially caching was enabled to reduce the number of calls made to all API endpoints and improve the latency of requests to the company’s API Gateway.
+For testing purposes, you would like to invalidate caching for the API clients to get the most recent responses. Which of the following should you do?
+
+Using the Header Bypass-Cache=1
+-Using the Header Cache-Control: max-age=0
+Use the Request parameter: ?bypass_cache=1
+Using the request parameter ?cache-control-max-age=0
+
+=================================================================================================================================================
+
+A firm uses AWS DynamoDB to store information about people’s favorite sports teams and allow the information to be searchable from their home page. There is a daily requirement that all 10 million records in the table should be deleted then re-loaded at 2:00 AM each night.
+Which option is an efficient way to delete with minimal costs?
+
+Call PurgeTable
+Scan and call DeleteItem
+Scan and call BatchDeleteItem
+-Delete then re-create the table
+
+=================================================================================================================================================
+
+A .NET developer team works with many ASP.NET web applications that use EC2 instances to host them on IIS. The deployment process needs to be configured so that multiple versions of the application can run in AWS Elastic Beanstalk. One version would be used for development, testing, and another version for load testing.
+Which of the following methods do you recommend?
+
+Use only one Beanstalk environment and perform configuration changes using an Ansible script
+Create an Application Load Balancer to route based on hostname so you can pass on parameters to the development Elastic Beanstalk environment. Create a file in .ebextensions/ to know how to handle the traffic coming from the ALB
+You cannot have multiple development environments in Elastic Beanstalk, just one development and one production environment
+-Define a dev environment with a single instance and a 'load test' environment that has settings close to production environment
+
+=================================================================================================================================================
+
+A company has several Linux-based EC2 instances that generate various log files which need to be analyzed for security and compliance purposes. The company wants to use Kinesis Data Streams (KDS) to analyze this log data.
+Which of the following is the most optimal way of sending log data from the EC2 instances to KDS?
+
+Install AWS SDK on each of the instances and configure it to send the necessary files to Kinesis Data Streams
+-Install and configure Kinesis Agent on each of the instances
+Run cron job on each of the instances to collect log data and send it to Kinesis Data Streams
+Use Kinesis Producer Library (KPL) to collect and ingest data from each EC2 instance
+
+=================================================================================================================================================
+
+Your company manages hundreds of EC2 instances running on Linux OS. The instances are configured in several Availability Zones in the eu-west-3 region. Your manager has requested to collect system memory metrics on all EC2 instances using a script.
+Which of the following solutions will help you collect this data?
+
+Extract RAM statistics using the instance metadata
+Extract RAM statistics from the standard CloudWatch metrics for EC2 instances
+-Use a cron job on the instances that pushes the EC2 RAM statistics as a Custom metric into CloudWatch
+Extract RAM statistics using X-Ray
+
+=================================================================================================================================================
+
+A website serves static content from an Amazon Simple Storage Service (Amazon S3) bucket and dynamic content from an application load balancer. The user base is spread across the world and latency should be minimized for a better user experience.
+Which technology/service can help access the static and dynamic content while keeping the data latency low?
+
+Use Global Accelerator to transparently switch between S3 bucket and load balancer for different data needs
+Use CloudFront's Lambda@Edge feature to server data from S3 buckets and load balancer programmatically on-the-fly
+-Configure CloudFront with multiple origins to serve both static and dynamic content at low latency to global users
+Use CloudFront's Origin Groups to group both static and dynamic requests into one request for further processing
+
+=================================================================================================================================================
+*
+A data analytics company with its IT infrastructure on the AWS Cloud wants to build and deploy its flagship application as soon as there are any changes to the source code.
+As a Developer Associate, which of the following options would you suggest to trigger the deployment? (Select two)
+
+Keep the source code in an Amazon EBS volume and start AWS CodePipeline whenever there are updates to the source code
+-Keep the source code in an AWS CodeCommit repository and start AWS CodePipeline whenever a change is pushed to the CodeCommit repository
+Keep the source code in Amazon EFS and start AWS CodePipeline whenever a file is updated
+Keep the source code in an Amazon S3 bucket and set up AWS CodePipeline to recur at an interval of every 15 minutes
+-Keep the source code in an Amazon S3 bucket and start AWS CodePipeline whenever a file in the S3 bucket is updated
+
+=================================================================================================================================================
+
+You are assigned as the new project lead for a web application that processes orders for customers. You want to integrate event-driven processing anytime data is modified or deleted and use a serverless approach using AWS Lambda for processing stream events.
+Which of the following databases should you choose from?
+
+-DynamoDB
+Kinesis
+ElastiCache
+RDS
+
+=================================================================================================================================================
+*
+A firm maintains a highly available application that receives HTTPS traffic from mobile devices and web browsers. The main Developer would like to set up the Load Balancer routing to route traffic from web servers to smart.com/api and from mobile devices to smart.com/mobile. A developer advises that the previous recommendation is not needed and that requests should be sent to api.smart.com and mobile.smart.com instead.
+Which of the following routing options were discussed in the given use-case? (select two)
+
+Cookie value
+Client IP
+Web browser version
+-Host based
+-Path based
+
+=================================================================================================================================================
+
+As part of internal regulations, you must ensure that all communications to Amazon S3 are encrypted.
+For which of the following encryption mechanisms will a request get rejected if the connection is not using HTTPS?
+
+-SSE-C
+SSE-S3
+SSE-KMS
+Client Side Encryption
+
+=================================================================================================================================================
+
+You have been hired at a company that needs an experienced developer to help with a continuous integration/continuous delivery (CI/CD) workflow on AWS. You configure the company’s workflow to run an AWS CodePipeline pipeline whenever the application’s source code changes in a repository hosted in AWS Code Commit and compiles source code with AWS Code Build. You are configuring ProjectArtifacts in your build stage.
+Which of the following should you do?
+
+Contact AWS Support to allow AWS CodePipeline to manage build outputs
+Give AWS CodeCommit permissions to upload the build output to your Amazon S3 bucket
+-Give AWS CodeBuild permissions to upload the build output to your Amazon S3 bucket
+Configure AWS CodeBuild to store output artifacts on EC2 servers
+
+=================================================================================================================================================
+
+A company developed an app-based service for citizens to book transportation rides in the local community. The platform is running on AWS EC2 instances and uses Amazon Relational Database Service (RDS) for storing transportation data. A new feature has been requested where receipts would be emailed to customers with PDF attachments retrieved from Amazon Simple Storage Service (S3).
+Which of the following options will provide EC2 instances with the right permissions to upload files to Amazon S3 and generate S3 Signed URL?
+
+CloudFormation
+-Create an IAM Role for EC2
+EC2 User Data
+Run <code>aws configure</code> on the EC2 instance
+
+=================================================================================================================================================
+
+You are getting ready for an event to show off your Alexa skill written in JavaScript. As you are testing your voice activation commands you find that some intents are not invoking as they should and you are struggling to figure out what is happening. You included the following code <code>console.log(JSON.stringify(this.event))</code> in hopes of getting more details about the request to your Alexa skill.
+You would like the logs stored in an Amazon Simple Storage Service (S3) bucket named MyAlexaLog. How do you achieve this?
+
+Use CloudWatch integration feature with Kinesis
+-Use CloudWatch integration feature with S3
+Use CloudWatch integration feature with Lambda
+Use CloudWatch integration feature with Glue
+
+=================================================================================================================================================
+
+A development team uses the AWS SDK for Java to maintain an application that stores data in AWS DynamoDB. The application makes use of <code>Scan</code> operations to return several items from a 25 GB table. There is no possibility of creating indexes to retrieve these items predictably. Developers are trying to get these specific rows from DynamoDB as fast as possible.
+Which of the following options can be used to improve the performance of the Scan operation?
+
+Use a ProjectionExpression
+-Use parallel scans
+Use a Query
+Use a FilterExpression
+
+=================================================================================================================================================
+
+You have a web application hosted on EC2 that makes GET and PUT requests for objects stored in Amazon Simple Storage Service (S3) using the SDK for PHP. As the security team completed the final review of your application for vulnerabilities, they noticed that your application uses hardcoded IAM access key and secret access key to gain access to AWS services. They recommend you leverage a more secure setup, which should use temporary credentials if possible.
+Which of the following options can be used to address the given use-case?
+
+Use the SSM parameter store
+-Use an IAM Instance Role
+Hardcode the credentials in the application code
+Use environment variables
+
+=================================================================================================================================================
+
+You are a system administrator whose company recently moved its production application to AWS and migrated data from MySQL to AWS DynamoDB. You are adding new tables to AWS DynamoDB and need to allow your application to query your data by the primary key and an alternate key. This option must be added when first creating tables otherwise changes cannot be made afterward.
+Which of the following actions should you take?
+
+Create a GSI
+Migrate away from DynamoDB
+Call Scan
+-Create a LSI
+
+=================================================================================================================================================
+
+You have an Amazon Kinesis Data Stream with 10 shards, and from the metrics, you are well below the throughput utilization of 10 MB per second to send data. You send 3 MB per second of data and yet you are receiving ProvisionedThroughputExceededException errors frequently.
+What is the likely cause of this?
+
+Metrics are slow to update
+-The partition key that you have selected isn't distributed enough
+You have too many shards
+The data retention period is too long
+
+=================================================================================================================================================
+
+An e-commerce company has implemented AWS CodeDeploy as part of its AWS cloud CI/CD strategy. The company has configured automatic rollbacks while deploying a new version of its flagship application to Amazon EC2.
+What occurs if the deployment of the new version fails?
+
+CodeDeploy switches the Route 53 alias records back to the known good green deployment and terminates the failed blue deployment
+AWS CodePipeline promotes the most recent working deployment with a SUCCEEDED status to production
+The last known working deployment is automatically restored using the snapshot stored in Amazon S3
+-A new deployment of the last known working version of the application is deployed with a new deployment ID
+
+=================================================================================================================================================
+*
+A user has an IAM policy as well as an Amazon SQS policy that apply to his account. The IAM policy grants his account permission for the <code>ReceiveMessage</code> action on <code>example_queue</code>, whereas the Amazon SQS policy gives his account permission for the <code>SendMessage</code> action on the same queue.
+Considering the permissions above, which of the following options are correct? (Select two)
+
+Either of IAM policies or Amazon SQS policies should be used to grant permissions. Both cannot be used together
+If the user sends a <code>SendMessage</code> request to <code>example_queue</code>, the IAM policy will deny this action
+-The user can send a <code>ReceiveMessage</code> request to <code>example_queue</code>, the IAM policy allows this action
+Adding only an IAM policy to deny the user of all actions on the queue is not enough. The SQS policy should also explicitly deny all action
+-If you add a policy that denies the user access to all actions for the queue, the policy will override the other two policies and the user will not have access to <code>example_queue</code>
+
+=================================================================================================================================================
+
+DevOps engineers are developing an order processing system where notifications are sent to a department whenever an order is placed for a product. The system also pushes identical notifications of the new order to a processing module that would allow EC2 instances to handle the fulfillment of the order. In the case of processing errors, the messages should be allowed to be re-processed at a later stage. The order processing system should be able to scale transparently without the need for any manual or programmatic provisioning of resources.
+Which of the following solutions can be used to address this use-case in the most cost-efficient way?
+
+SNS + Lambda
+SNS + Kinesis
+SQS + SES
+-SNS + SQS
+
+=================================================================================================================================================
+
+As a Full-stack Web Developer, you are involved with every aspect of a company’s platform from development with PHP and JavaScript to the configuration of NoSQL databases with Amazon DynamoDB. You are not concerned about your response receiving stale data from your database and need to perform 16 eventually consistent reads per second of 12 KB in size each.
+How many read capacity units (RCUs) do you need?
+
+48
+12
+192
+-24
+
+=================================================================================================================================================
+*
+An Amazon Simple Queue Service (SQS) has to be configured between two AWS accounts for shared access to the queue. AWS account A has the SQS queue in its account and AWS account B has to be given access to this queue.
+Which of the following options need to be combined to allow this cross-account access? (Select three)
+
+-The account B administrator delegates the permission to assume the role to any users in account B
+The account A administrator attaches a trust policy to the role that identifies account B as the AWS service principal who can assume the role
+The account B administrator creates an IAM role and attaches a trust policy to the role with account B as the principal
+-The account A administrator attaches a trust policy to the role that identifies account B as the principal who can assume the role
+The account A administrator delegates the permission to assume the role to any users in account A
+-The account A administrator creates an IAM role and attaches a permissions policy
+
+=================================================================================================================================================
+
+A development team had enabled and configured CloudTrail for all the Amazon S3 buckets used in a project. The project manager owns all the S3 buckets used in the project. However, the manager noticed that he did not receive any object-level API access logs when the data was read by another AWS account.
+What could be the reason for this behavior/error?
+
+The meta-data of the bucket is in an invalid state and needs to be corrected by the bucket owner from AWS console to fix the issue
+-The bucket owner also needs to be object owner to get the object access logs
+CloudTrail needs to be configured on both the AWS accounts for receiving the access logs in cross-account access
+CloudTrail always delivers object-level API access logs to the requester and not to object owner
+
+=================================================================================================================================================
+*
+You are planning to build a fleet of EBS-optimized EC2 instances to handle the load of your new application. Due to security compliance, your organization wants any secret strings used in the application to be encrypted to prevent exposing values as clear text.
+The solution requires that decryption events be audited and API calls to be simple. How can this be achieved? (select two)
+
+Encrypt first with KMS then store in SSM Parameter store
+-Audit using CloudTrail
+Audit using SSM Audit Trail
+-Store the secret as SecureString in SSM Parameter Store
+Store the secret as PlainText in SSM Parameter Store
+
+=================================================================================================================================================
+
+Your company manages MySQL databases on EC2 instances to have full control. Applications on other EC2 instances managed by an ASG make requests to these databases to get information that displays data on dashboards viewed on mobile phones, tablets, and web browsers.
+Your manager would like to scale your Auto Scaling group based on the number of requests per minute. How can you achieve this?
+
+Attach additional Elastic File Storage
+-You create a CloudWatch custom metric and build an alarm to scale your ASG
+Attach an Elastic Load Balancer
+You enable detailed monitoring and use that to scale your ASG
+
+=================================================================================================================================================
+
+Consider the following IAM policy:
+<pre><code>{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Deny",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::EXAMPLE-BUCKET/private*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": ["s3:PutObject", "s3:GetObject"]
+      "Resource": "arn:aws:s3:::EXAMPLE-BUCKET/*",
+    }
+  ]
+}
+</code></pre>
+Which of the following statements is correct per the given policy?
+
+The policy denies PutObject and GetObject access to all buckets except the <code>EXAMPLE-BUCKET/private</code> bucket
+-The policy provides PutObject and GetObject access to all objects in the <code>EXAMPLE-BUCKET</code> bucket except the objects that start with <code>private</code>
+The policy provides PutObject and GetObject access to all buckets except the <code>EXAMPLE-BUCKET/private</code> bucket
+The policy provides PutObject and GetObject access to all objects in the <code>EXAMPLE-BUCKET</code> bucket as well as provides access to all s3 actions on objects starting with <code>private</code> in the <code>EXAMPLE-BUCKET</code> bucket
+
+=================================================================================================================================================
+*
+An organization uses Alexa as its intelligent assistant to improve productivity throughout the organization. A group of developers manages custom Alexa Skills written in Node.Js to control conference-room equipment settings and start meetings using voice activation. The manager has requested developers that all functions code should be monitored for error rates with the possibility of creating alarms on top of them.
+Which of the following options should be chosen? (select two)
+
+SSM
+-CloudWatch Alarms
+-CloudWatch Metrics
+CloudTrail
+X-Ray
+
+=================================================================================================================================================
+
+Your company leverages Amazon CloudFront to provide content via the internet to customers with low latency. Aside from latency, security is another concern and you are looking for help in enforcing end-to-end connections using HTTPS so that content is protected.
+Which of the following options is available for HTTPS in AWS CloudFront?
+
+-Between clients and CloudFront as well as between CloudFront and backend
+Between CloudFront and backend only
+Neither between clients and CloudFront nor between CloudFront and backend
+Between clients and CloudFront only
+
+=================================================================================================================================================
+
+Your company has been hired to build a resilient mobile voting app for an upcoming music award show that expects to have 5 to 20 million viewers. The mobile voting app will be marketed heavily months in advance so you are expected to handle millions of messages in the system. You are configuring Amazon Simple Queue Service (SQS) queues for your architecture that should receive messages from 20 KB to 200 KB.
+Is it possible to send these messages to SQS?
+
+-Yes, the max message size is 256KB
+No, the max message size is 128KB
+No, the max message size is 64KB
+Yes, the max message size is 512KB
+
+=================================================================================================================================================
+
+You have configured a Network ACL and a Security Group for the load balancer and Amazon EC2 instances to allow inbound traffic on port 80. However, users are still unable to connect to your website after launch.
+Which additional configuration is required to make the website accessible to all users over the internet?
+
+Add a rule to the Network ACLs to allow outbound traffic on ports 32768 - 61000
+Add a rule to the Security Group allowing outbound traffic on port 80
+-Add a rule to the Network ACLs to allow outbound traffic on ports 1024 - 65535
+Add a rule to the Network ACLs to allow outbound traffic on ports 1025 - 5000
+
+=================================================================================================================================================
+
+You have uploaded a zip file to AWS Lambda that contains code files written in Node.Js. When your function is executed you receive the following output, 'Error: Memory Size: 10,240 MB Max Memory Used'.
+Which of the following explains the problem?
+
+The uncompressed zip file exceeds AWS Lambda limits
+Your zip file is corrupt
+-Your Lambda function ran out of RAM
+You have uploaded a zip file larger than 50 MB to AWS Lambda
+
+=================================================================================================================================================
+
+An organization recently began using AWS CodeCommit for its source control service. A compliance security team visiting the organization was auditing the software development process and noticed developers making many git push commands within their development machines. The compliance team requires that encryption be used for this activity.
+How can the organization ensure source code is encrypted in transit and at rest?
+
+Use AWS Lambda as a hook to encrypt the pushed code
+-Repositories are automatically encrypted at rest
+Use a git command line hook to encrypt the code client side
+Enable KMS encryption
+
+=================================================================================================================================================
+
+A senior cloud engineer designs and deploys online fraud detection solutions for credit card companies processing millions of transactions daily. The Elastic Beanstalk application sends files to Amazon S3 and then sends a message to an Amazon SQS queue containing the path of the uploaded file in S3. The engineer wants to postpone the delivery of any new messages to the queue for at least 10 seconds.
+Which SQS feature should the engineer leverage?
+
+-Use DelaySeconds parameter
+Enable LongPolling
+Implement application-side delay
+Use visibility timeout parameter
+
+=================================================================================================================================================
+
+The development team at a company is looking at building an AWS CloudFormation template that self-populates the AWS Region variable while deploying the CloudFormation template.
+What is the MOST operationally efficient way to determine the Region in which the template is being deployed?
+
+-Use the AWS::Region pseudo parameter
+Create an AWS Lambda-backed custom resource for Region and let the desired value be populated at the time of deployment by the Lambda
+Create a CloudFormation parameter for Region and let the desired value be populated at the time of deployment
+Set up a mapping containing the key and the named values for all AWS Regions and then have the CloudFormation template auto-select the desired value
+
+=================================================================================================================================================
+
+Your AWS CodeDeploy deployment to T2 instances succeed. The new application revision makes API calls to Amazon S3 however the application is not working as expected due to authorization exceptions and you were assigned to troubleshoot the issue.
+Which of the following should you do?
+
+Fix the IAM permissions for the CodeDeploy service role
+Enable CodeDeploy Proxy
+Make the S3 bucket public
+-Fix the IAM permissions for the EC2 instance role
+
+=================================================================================================================================================
+
+What is the run order of the hooks for in-place deployments using CodeDeploy?
+
+Before Install -&gt; Application Stop -&gt; ValidateService -&gt; Application Start
+-Application Stop -&gt; Before Install -&gt; Application Start -&gt; ValidateService
+Before Install -&gt; Application Stop -&gt; Application Start -&gt; ValidateService
+Application Stop -&gt; Before Install -&gt; ValidateService -&gt; Application Start
+
+=================================================================================================================================================
+
+A communication platform serves millions of customers and deploys features in a production environment on AWS via CodeDeploy. You are reviewing scripts for the deployment process located in the AppSpec file.
+Which of the following options lists the correct order of lifecycle events?
+
+BeforeInstall =&gt; ApplicationStart =&gt; DownloadBundle =&gt; ValidateService
+ValidateService =&gt; BeforeInstall =&gt;DownloadBundle =&gt; ApplicationStart
+BeforeInstall =&gt; ValidateService =&gt;DownloadBundle =&gt; ApplicationStart
+-DownloadBundle =&gt; BeforeInstall =&gt; ApplicationStart =&gt; ValidateService
+
+=================================================================================================================================================
+
+Your development team uses the AWS SDK for Java on a web application that uploads files to several Amazon Simple Storage Service (S3) buckets using the SSE-KMS encryption mechanism. Developers are reporting that they are receiving permission errors when trying to push their objects over HTTP. Which of the following headers should they include in their request?
+
+-'x-amz-server-side-encryption': 'aws:kms'
+'x-amz-server-side-encryption': 'SSE-KMS'
+'x-amz-server-side-encryption': 'AES256'
+'x-amz-server-side-encryption': 'SSE-S3'
+
+=================================================================================================================================================
+
+An IT company is using AWS CloudFormation to manage its IT infrastructure. It has created a template to provision a stack with a VPC and a subnet. The output value of this subnet has to be used in another stack.
+As a Developer Associate, which of the following options would you suggest to provide this information to another stack?
+
+Use 'Expose' field in the Output section of the stack's template
+Use Fn::ImportValue
+-Use 'Export' field in the Output section of the stack's template
+Use Fn::Transform
+
+=================================================================================================================================================
+
+A company would like to migrate the existing application code from a GitHub repository to AWS CodeCommit.
+As an AWS Certified Developer Associate, which of the following would you recommend for migrating the cloned repository to CodeCommit over HTTPS?
+
+Use IAM user secret access key and access key ID
+Use IAM Multi-Factor authentication
+-Use Git credentials generated from IAM
+Use authentication offered by GitHub secure tokens
+
+=================================================================================================================================================
+
+A developer is migrating an on-premises application to AWS Cloud. The application currently processes user uploads and uploads them to a local directory on the server. All such file uploads must be saved and then made available to all instances in an Auto Scaling group.
+As a Developer Associate, which of the following options would you recommend for this use-case?
+
+Use Amazon EBS as the storage volume and share the files via file synchronization software
+Use Instance Store type of EC2 instances and share the files via file synchronization software
+-Use Amazon S3 and make code changes in the application so all uploads are put on S3
+Use Amazon EBS and configure the application AMI to use a snapshot of the same EBS instance while launching new instances
+
+=================================================================================================================================================
+
+For an application that stores personal health information (PHI) in an encrypted Amazon RDS for MySQL DB instance, a developer wants to improve its performance by caching frequently accessed data and adding the ability to sort or rank the cached datasets.
+What is the best approach to meet these requirements subject to the constraint that the PHI stays encrypted at all times?
+
+Migrate the frequently accessed data to DynamoDB Accelerator (DAX) that has encryption enabled for data in transit and at rest
+-Store the frequently accessed data in an Amazon ElastiCache for Redis instance with encryption enabled for data in transit and at rest
+Store the frequently accessed data in an Amazon ElastiCache for Memcached instance with encryption enabled for data in transit and at rest
+Migrate the frequently accessed data to an EC2 Instance Store that has encryption enabled for data in transit and at rest
+
+=================================================================================================================================================
+
+A company wants to add geospatial capabilities to the cache layer, along with query capabilities and an ability to horizontally scale. The company uses Amazon RDS as the database tier.
+Which solution is optimal for this use-case?
+
+-Leverage the capabilities offered by ElastiCache for Redis with cluster mode enabled
+Migrate to Amazon DynamoDB to utilize the automatically integrated DynamoDB Accelerator (DAX) along with query capability features
+Leverage the capabilities offered by ElastiCache for Redis with cluster mode disabled
+Use CloudFront caching to cater to demands of increasing workloads
+
+=================================================================================================================================================
+*
+You have a Java-based application running on EC2 instances loaded with AWS CodeDeploy agents. You are considering different options for deployment, one is the flexibility that allows for incremental deployment of your new application versions and replaces existing versions in the EC2 instances. The other option is a strategy in which an Auto Scaling group is used to perform a deployment.
+Which of the following options will allow you to deploy in this manner? (Select two)
+
+-Blue/green Deployment
+Pilot Light Deployment
+Cattle Deployment
+-In-place Deployment
+Warm Standby Deployment
+
+=================================================================================================================================================
+
+You are working on a project that has over 100 dependencies. Every time your AWS CodeBuild runs a build step it has to resolve Java dependencies from external Ivy repositories which take a long time. Your manager wants to speed this process up in AWS CodeBuild.
+Which of the following will help you do this with minimal effort?
+
+Use Instance Store type of EC2 instances to facilitate internal dependency cache
+Reduce the number of dependencies
+-Cache dependencies on S3
+Ship all the dependencies as part of the source code
+
+=================================================================================================================================================
+
+The development team at a company wants to insert vendor records into an Amazon DynamoDB table as soon as the vendor uploads a new file into an Amazon S3 bucket.
+As a Developer Associate, which set of steps would you recommend to achieve this?
+
+Develop a Lambda function that will poll the S3 bucket and then insert the records into DynamoDB
+Write a cron job that will execute a Lambda function at a scheduled time and insert the records into DynamoDB
+-Create an S3 event to invoke a Lambda function that inserts records into DynamoDB
+Set up an event with Amazon CloudWatch Events that will monitor the S3 bucket and then insert the records into DynamoDB
+
+=================================================================================================================================================
+
+You are designing a high-performance application that requires millions of connections. You have several EC2 instances running Apache2 web servers and the application will require capturing the user’s source IP address and source port without the use of X-Forwarded-For.
+Which of the following options will meet your needs?
+
+Application Load Balancer
+Classic Load Balancer
+Elastic Load Balancer
+-Network Load Balancer
+
+=================================================================================================================================================

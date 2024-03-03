@@ -1,0 +1,74 @@
+
+Home (categories: aws, react, etc...)
+=========================================================================
+    
+    Components
+    ---------------------------------------
+    CategoryButton
+        image/icon
+        title
+
+
+
+Category Menu
+=========================================================================
+    
+    Components
+    ---------------------------------------
+    CategoryButton
+        image/icon
+        title
+
+
+
+Exam
+=========================================================================
+    
+    Components
+    ---------------------------------------
+    
+--- Header
+        title
+        progress bar
+        steps (1 0f 40)
+    
+--- Question
+        
+        Components
+        ---------------------------------------
+        QuesChoice radio
+
+        QuesMultiChoice checkbox
+        
+        QuesMatch select
+
+
+
+        possible answers
+        answer button
+
+        Functionality
+        --------------------------------------- 
+
+        
+--- Footer
+        back button
+        next button
+
+    Functionality
+    ---------------------------------------
+    loadExamData
+    checkCurrentAnswer
+    markIncorrect
+    addToScore
+    navToQuestion (previous or next)
+
+
+
+Results
+=========================================================================
+
+    Components
+    ---------------------------------------
+    results text (40/40, % correct)
+    main menu button
