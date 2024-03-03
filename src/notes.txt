@@ -31,6 +31,7 @@ Exam
         title
         progress bar
         steps (1 0f 40)
+        timer
     
 --- Question
         
