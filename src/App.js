@@ -1,11 +1,23 @@
 import './App.css';
+import QuesRadio from './components/QuestionTypes/QuesRadio/index';
 
-function App() {
+export default function App() {
 	return (
 		<div className="App">
-			<h1>React Exam</h1>
+			
+			<div className="exam-container">
+
+				{/* ------------------------- Exam Header ------------------------- */}
+
+				{/* ------------------------- Exam Question ------------------------- */}
+
+				{/* ------------------------- Exam Footer ------------------------- */}
+
+				{/* ------------------------- Exam Results ------------------------- */}
+
+			</div>
+
+			<QuesRadio />
 		</div>
 	);
 }
-
-export default App;
